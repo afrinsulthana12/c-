@@ -1,0 +1,30 @@
+#include <iostream>
+#include <iomanip> 
+using namespace std;
+
+int main() {
+	int T; cin >> T;
+	cout << setiosflags(ios::uppercase);
+	cout << setw(0xf) << internal;
+	while(T--) {
+		double A; cin >> A;
+		double B; cin >> B;
+		double C; cin >> C;
+		/*/* --- Line A --- */
+        // Left justified, show base (0x), lowercase hex
+        cout << left << hex << showbase << nouppercase << (long long)A << endl;
+
+        /* --- Line B --- */
+        // Right justified, width 15, fill with '_', show sign (+/-), 2 decimal places
+        cout << right << setw(15) << setfill('_') << showpos << fixed << setprecision(2) << B << endl;
+
+        /* --- Line C --- */
+        // Scientific notation, uppercase, 9 decimal places, no sign (+), reset filling
+        cout << scientific << uppercase << noshowpos << setprecision(9) << C << endl;
+ 
+
+
+	}
+	return 0;
+
+}

@@ -1,0 +1,35 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    int n, q;
+    // Read the number of variable-length arrays and queries
+    if (!(cin >> n >> q)) return 0;
+
+    // Create a vector of vectors to store the data
+    vector<vector<int>> a(n);
+
+    for (int i = 0; i < n; i++) {
+        int k;
+        cin >> k; // Read the size of the current inner array
+        a[i].resize(k); // Resize the inner vector to hold k elements
+        for (int j = 0; j < k; j++) {
+            cin >> a[i][j]; // Fill the inner array
+        }
+    }
+
+    // Process queries
+    for (int k = 0; k < q; k++) {
+        int i, j;
+        cin >> i >> j;
+        // Print the element at index j of array a[i]
+        cout << a[i][j] << endl;
+    }
+
+    return 0;
+}

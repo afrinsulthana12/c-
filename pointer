@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h> // Required for abs()
+
+void update(int *a, int *b) {
+    // Store the initial values to avoid losing data during calculation
+    int valA = *a;
+    int valB = *b;
+    
+    // Update 'a' to contain the sum
+    *a = valA + valB;
+    
+    // Update 'b' to contain the absolute difference
+    // abs() returns the positive distance between two numbers
+    *b = abs(valA - valB);
+}
+
+int main() {
+    int a, b;
+    int *pa = &a, *pb = &b;
+    
+    // Read input values
+    if (scanf("%d %d", &a, &b) != 2) return 0;
+    
+    // Pass the pointers to the function
+    update(pa, pb);
+    
+    // Print the modified values of a and b
+    printf("%d\n%d", a, b);
+
+    return 0;
+}
